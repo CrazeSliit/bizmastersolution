@@ -1,9 +1,24 @@
 'use client';
 
-import { useTheme } from '../../contexts/ThemeContext';
+import { useEffect, useState } from 'react';
+import { useTheme } from '../../../contexts/ThemeContext';
 
 export default function ThemeToggle() {
   const { theme, toggleTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Prevent hydration mismatch by showing a placeholder until mounted
+  if (!mounted) {
+    return (
+      <div className="relative p-2 rounded-lg bg-muted/50 border border-border w-9 h-9">
+        <div className="w-5 h-5 opacity-0" />
+      </div>
+    );
+  }
 
   return (
     <button

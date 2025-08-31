@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ThemeToggle from '../Component/ui/ThemeToggle';
+import ThemeToggle from './home/ui/ThemeToggle';
 
 export default function Navigation() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
