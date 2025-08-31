@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import "./globals.css";
+import Navigation from "../components/Navigation";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
         className={`${inter.variable} ${merriweather.variable} font-sans antialiased h-full`}
       >
         <ThemeProvider>
+          <Navigation />
           {children}
         </ThemeProvider>
       </body>
