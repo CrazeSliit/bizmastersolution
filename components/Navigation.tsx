@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import ThemeToggle from './ThemeToggle';
 
 export default function Navigation() {
@@ -26,41 +27,41 @@ export default function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="flex items-center space-x-2">
-                <a
-                  href="#home"
+                <Link
+                  href="/"
                   className="text-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 relative group rounded-xl hover:bg-primary/10"
                 >
                   Home
                   <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-6 rounded-full"></span>
-                </a>
-                <a
-                  href="#about"
+                </Link>
+                <Link
+                  href="/about"
                   className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 relative group rounded-xl hover:bg-primary/10"
                 >
                   About
                   <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-6 rounded-full"></span>
-                </a>
-                <a
-                  href="#services"
+                </Link>
+                <Link
+                  href="/services"
                   className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 relative group rounded-xl hover:bg-primary/10"
                 >
                   Services
                   <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-6 rounded-full"></span>
-                </a>
-                <a
-                  href="#experience"
+                </Link>
+                <Link
+                  href="/business-model"
                   className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 relative group rounded-xl hover:bg-primary/10"
                 >
-                  Experience
+                  Business Model
                   <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-6 rounded-full"></span>
-                </a>
-                <a
-                  href="#contact"
+                </Link>
+                <Link
+                  href="/contact"
                   className="text-muted-foreground hover:text-primary px-4 py-2 text-sm font-medium transition-all duration-300 relative group rounded-xl hover:bg-primary/10"
                 >
                   Contact
                   <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-6 rounded-full"></span>
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -100,41 +101,41 @@ export default function Navigation() {
           {/* Mobile menu */}
           <div className={`md:hidden transition-all duration-500 ease-in-out ${isMobileMenuOpen ? 'max-h-80 opacity-100 mt-4' : 'max-h-0 opacity-0 overflow-hidden'}`}>
             <div className="px-4 pt-4 pb-6 space-y-2 bg-background/90 backdrop-blur-xl rounded-2xl border border-primary/30 shadow-lg">
-              <a
-                href="#home"
+              <Link
+                href="/"
                 className="text-foreground hover:text-primary block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl hover:bg-primary/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
-              </a>
-              <a
-                href="#about"
+              </Link>
+              <Link
+                href="/about"
                 className="text-muted-foreground hover:text-primary block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl hover:bg-primary/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 About
-              </a>
-              <a
-                href="#services"
+              </Link>
+              <Link
+                href="/services"
                 className="text-muted-foreground hover:text-primary block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl hover:bg-primary/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Services
-              </a>
-              <a
-                href="#experience"
+              </Link>
+              <Link
+                href="/business-model"
                 className="text-muted-foreground hover:text-primary block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl hover:bg-primary/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Experience
-              </a>
-              <a
-                href="#contact"
+                Business Model
+              </Link>
+              <Link
+                href="/contact"
                 className="text-muted-foreground hover:text-primary block px-4 py-3 text-base font-medium transition-all duration-300 rounded-xl hover:bg-primary/10"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Contact
-              </a>
+              </Link>
               <div className="pt-4">
                 <button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-xl text-sm font-medium transition-all duration-300 hover:scale-[1.02] shadow-lg hover:shadow-primary/25">
                   Get Started

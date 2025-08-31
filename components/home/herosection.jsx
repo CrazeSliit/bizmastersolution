@@ -36,7 +36,7 @@ export default function HeroSection() {
       
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 lg:py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 lg:pt-32 pb-12 lg:pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
           <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
@@ -63,21 +63,7 @@ export default function HeroSection() {
               <span className="text-hero-accent font-semibold"> execution</span> to take your business to the next level.
             </p>
             
-            {/* Statistics */}
-            <div className="flex flex-wrap gap-8 py-4">
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-hero-accent">500+</div>
-                <div className="text-sm text-hero-subtext">Businesses Transformed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-hero-accent">98%</div>
-                <div className="text-sm text-hero-subtext">Success Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl lg:text-4xl font-bold text-hero-accent">24/7</div>
-                <div className="text-sm text-hero-subtext">Expert Support</div>
-              </div>
-            </div>
+
             
             
                         <div className="flex flex-col sm:flex-row gap-3 pt-4">
