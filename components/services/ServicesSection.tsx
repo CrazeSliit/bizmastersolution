@@ -173,7 +173,7 @@ export default function ServicesSection() {
       {/* Services Grid */}
       <div className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="space-y-16">
+          <div className="space-y-24">
             {pillars.map((pillar, index) => (
               <div key={pillar.id} className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
                 {/* Content */}
@@ -195,48 +195,172 @@ export default function ServicesSection() {
                   {/* Core Services */}
                   <div className="space-y-4">
                     <h3 className="text-xl font-bold text-foreground">Core Services:</h3>
-                    <ul className="space-y-2">
+                    <div className="grid gap-3">
                       {pillar.services.map((service, serviceIndex) => (
-                        <li key={serviceIndex} className="flex items-start space-x-3">
+                        <div key={serviceIndex} className="flex items-start space-x-3 p-3 bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors duration-300">
                           <svg className="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                           </svg>
-                          <span className="text-muted-foreground">{service}</span>
-                        </li>
+                          <span className="text-muted-foreground font-medium">{service}</span>
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
 
                   {/* Products & Tools */}
                   {pillar.products && (
                     <div className="space-y-4">
                       <h3 className="text-xl font-bold text-foreground">Products & Tools:</h3>
-                      <ul className="space-y-2">
+                      <div className="grid gap-3">
                         {pillar.products.map((product, productIndex) => (
-                          <li key={productIndex} className="flex items-start space-x-3">
+                          <div key={productIndex} className="flex items-start space-x-3 p-3 bg-background/50 border border-primary/20 rounded-xl hover:border-primary/40 transition-colors duration-300">
                             <svg className="w-5 h-5 text-primary mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
                             </svg>
-                            <span className="text-muted-foreground">{product}</span>
-                          </li>
+                            <span className="text-muted-foreground font-medium">{product}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </div>
                   )}
+
+                  {/* CTA Button for each pillar */}
+                  <div className="pt-4">
+                    <button className="group bg-primary/10 hover:bg-primary text-muted-foreground hover:text-primary-foreground px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center">
+                      Learn More About {pillar.name}
+                      <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      </svg>
+                    </button>
+                  </div>
                 </div>
 
-                {/* Visual */}
+                {/* Enhanced Visual */}
                 <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8">
-                    <div className="w-full h-[400px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center">
-                      <div className="w-24 h-24 bg-primary rounded-3xl flex items-center justify-center">
-                        {pillar.icon}
+                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8 relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="w-full h-full" style={{
+                        backgroundImage: 'radial-gradient(circle, var(--primary) 1px, transparent 1px)',
+                        backgroundSize: '20px 20px'
+                      }}></div>
+                    </div>
+                    
+                    <div className="relative w-full h-[400px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex flex-col items-center justify-center p-8">
+                      <div className="w-32 h-32 bg-primary rounded-3xl flex items-center justify-center mb-6 shadow-2xl">
+                        <div className="scale-150">
+                          {pillar.icon}
+                        </div>
+                      </div>
+                      <h3 className="text-2xl font-bold text-foreground text-center mb-2">{pillar.name}</h3>
+                      <p className="text-primary font-semibold text-center">{pillar.subtitle}</p>
+                      
+                      {/* Feature highlights */}
+                      <div className="mt-6 flex flex-wrap gap-2 justify-center">
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">Professional</span>
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">Scalable</span>
+                        <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">AI-Powered</span>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Service Comparison */}
+      <div className="py-16 lg:py-24 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Why Choose Our <span className="text-primary">Service Model</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Compare traditional consulting vs. our comprehensive execution partnership
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Traditional Consulting */}
+            <div className="bg-background/50 backdrop-blur-sm rounded-3xl p-8 border border-muted-foreground/20">
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-muted-foreground/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-muted-foreground mb-2">Traditional Consulting</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-muted-foreground mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-muted-foreground">Strategy only, no execution</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-muted-foreground mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-muted-foreground">Short-term engagement</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-muted-foreground mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-muted-foreground">Limited technology integration</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-muted-foreground mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-muted-foreground">No ongoing monitoring</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* BIZmaster Solutions */}
+            <div className="bg-primary/10 backdrop-blur-sm rounded-3xl p-8 border border-primary/40 relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-bold">RECOMMENDED</span>
+              </div>
+              <div className="text-center mb-6">
+                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">BIZmaster Solutions</h3>
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-primary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-foreground font-medium">Strategy + Full Execution Partnership</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-primary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-foreground font-medium">Long-term Commitment & Monitoring</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-primary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-foreground font-medium">Advanced AI & Technology Integration</span>
+                </li>
+                <li className="flex items-start space-x-3">
+                  <svg className="w-5 h-5 text-primary mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                  </svg>
+                  <span className="text-foreground font-medium">Continuous Growth & Optimization</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

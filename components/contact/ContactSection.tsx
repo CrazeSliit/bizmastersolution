@@ -96,7 +96,7 @@ export default function ContactSection() {
               Get in <span className="text-primary">Touch</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
-              Ready to transform your business? Let's discuss how BIZmaster Solutions can accelerate your growth and success
+              Ready to transform your business? Let&apos;s discuss how BIZmaster Solutions can accelerate your growth and success
             </p>
           </div>
         </div>
@@ -273,6 +273,162 @@ export default function ContactSection() {
         </div>
       </div>
 
+      {/* Contact Methods Grid */}
+      <div className="py-16 lg:py-24 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Multiple Ways to <span className="text-primary">Connect</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Choose the communication method that works best for your business needs and urgency level
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8">
+            {[
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                ),
+                title: "Phone Consultation",
+                subtitle: "Direct Line to Experts",
+                contact: "+1 (555) 123-4567",
+                availability: "Mon-Fri, 9 AM - 6 PM EST",
+                response: "Immediate",
+                best: "Urgent matters & complex discussions"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                ),
+                title: "Email Support",
+                subtitle: "Comprehensive Documentation",
+                contact: "info@bizmastersolutions.com",
+                availability: "24/7 Monitoring",
+                response: "Within 4 hours",
+                best: "Detailed inquiries & project briefs"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                ),
+                title: "Live Chat",
+                subtitle: "AI + Human Support",
+                contact: "Website Chat Widget",
+                availability: "24/7 AI + Business Hours Expert",
+                response: "Instant",
+                best: "Quick questions & initial guidance"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                ),
+                title: "Video Conference",
+                subtitle: "Face-to-Face Strategy Sessions",
+                contact: "Zoom, Teams, Google Meet",
+                availability: "Flexible Scheduling",
+                response: "Same day booking",
+                best: "Strategy planning & team meetings"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                ),
+                title: "Office Visit",
+                subtitle: "In-Person Collaboration",
+                contact: "123 Business District, Tech City",
+                availability: "By Appointment Only",
+                response: "Within 48 hours",
+                best: "Comprehensive strategy development"
+              },
+              {
+                icon: (
+                  <svg className="w-8 h-8 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                ),
+                title: "Emergency Support",
+                subtitle: "Critical Business Issues",
+                contact: "+1 (555) 999-HELP",
+                availability: "24/7 Priority Line",
+                response: "Within 30 minutes",
+                best: "System failures & urgent problems"
+              }
+            ].map((method, index) => (
+              <div key={index} className="bg-background/50 backdrop-blur-sm rounded-3xl p-8 border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 group">
+                <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  {method.icon}
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">{method.title}</h3>
+                <p className="text-primary font-semibold mb-4">{method.subtitle}</p>
+                
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-sm font-medium text-foreground">Contact: </span>
+                      <span className="text-sm text-muted-foreground">{method.contact}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary/60 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-sm font-medium text-foreground">Available: </span>
+                      <span className="text-sm text-muted-foreground">{method.availability}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-primary/40 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="text-sm font-medium text-foreground">Response: </span>
+                      <span className="text-sm text-muted-foreground">{method.response}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-primary/10 rounded-xl p-3 mb-4">
+                  <p className="text-xs text-muted-foreground">
+                    <span className="font-semibold">Best for:</span> {method.best}
+                  </p>
+                </div>
+
+                <button className="w-full bg-primary/10 hover:bg-primary text-muted-foreground hover:text-primary-foreground py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105">
+                  Choose This Method
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Success Stories Preview */}
+      <div className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Client <span className="text-primary">Success Stories</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              See how we&apos;ve helped businesses like yours achieve remarkable growth and transformation
+            </p>
+          </div>
+
+          
+        </div>
+      </div>
+
       {/* FAQ Section */}
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-4xl mx-auto px-6">
@@ -298,7 +454,7 @@ export default function ContactSection() {
 
             <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20">
               <h3 className="text-xl font-bold text-foreground mb-2">What makes your approach different from other consulting firms?</h3>
-              <p className="text-muted-foreground">Our unique three-pronged approach goes beyond consulting to execution partnership. We don't just provide strategies—we help implement and monitor them for long-term success.</p>
+              <p className="text-muted-foreground">Our unique three-pronged approach goes beyond consulting to execution partnership. We don&apos;t just provide strategies—we help implement and monitor them for long-term success.</p>
             </div>
 
             <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-6 border border-primary/20">
