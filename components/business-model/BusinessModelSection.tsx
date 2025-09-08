@@ -190,6 +190,115 @@ export default function BusinessModelSection() {
         </div>
       </div>
 
+      {/* Success Metrics */}
+      <div className="py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Proven <span className="text-primary">Results</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Our three-pronged approach delivers measurable outcomes across all business dimensions
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
+            {[
+              { metric: "300%", label: "Average ROI Increase", icon: "📈" },
+              { metric: "85%", label: "Process Efficiency Gain", icon: "⚡" },
+              { metric: "95%", label: "Client Satisfaction Rate", icon: "🎯" },
+              { metric: "50+", label: "Successful Transformations", icon: "🚀" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 group">
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
+                <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{stat.metric}</div>
+                <div className="text-muted-foreground font-medium">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Implementation Timeline */}
+      <div className="py-16 lg:py-24 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+              Implementation <span className="text-primary">Timeline</span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              A structured approach to business transformation with clear milestones and deliverables
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute left-8 top-16 bottom-0 w-1 bg-primary/30"></div>
+              
+              <div className="space-y-12">
+                {[
+                  {
+                    phase: "Phase 1",
+                    title: "Discovery & Assessment",
+                    duration: "Weeks 1-2",
+                    description: "Comprehensive analysis of current state, pain points, and opportunities",
+                    deliverables: ["Business Assessment Report", "Technology Audit", "Opportunity Matrix", "Strategic Roadmap"]
+                  },
+                  {
+                    phase: "Phase 2", 
+                    title: "Strategy & Planning",
+                    duration: "Weeks 3-4",
+                    description: "Design tailored solutions and create detailed implementation plans",
+                    deliverables: ["Strategic Plan", "Technology Blueprint", "Process Maps", "Success Metrics"]
+                  },
+                  {
+                    phase: "Phase 3",
+                    title: "Implementation & Execution",
+                    duration: "Weeks 5-12",
+                    description: "Deploy solutions, implement processes, and train teams",
+                    deliverables: ["System Implementation", "Process Optimization", "Team Training", "Performance Monitoring"]
+                  },
+                  {
+                    phase: "Phase 4",
+                    title: "Monitoring & Optimization",
+                    duration: "Ongoing",
+                    description: "Continuous monitoring, support, and iterative improvements",
+                    deliverables: ["Performance Reports", "Optimization Plans", "Support Services", "Growth Strategies"]
+                  }
+                ].map((timeline, index) => (
+                  <div key={index} className="relative flex items-start space-x-8">
+                    <div className="flex-shrink-0 w-16 h-16 bg-primary rounded-full flex items-center justify-center relative z-10">
+                      <span className="text-primary-foreground font-bold">{index + 1}</span>
+                    </div>
+                    <div className="flex-1 bg-background/50 backdrop-blur-sm rounded-3xl p-8 border border-primary/20">
+                      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                        <div>
+                          <span className="text-primary font-semibold">{timeline.phase}</span>
+                          <h3 className="text-xl font-bold text-foreground">{timeline.title}</h3>
+                        </div>
+                        <span className="text-sm text-muted-foreground bg-primary/10 px-3 py-1 rounded-full">{timeline.duration}</span>
+                      </div>
+                      <p className="text-muted-foreground mb-6">{timeline.description}</p>
+                      <div className="grid md:grid-cols-2 gap-3">
+                        {timeline.deliverables.map((deliverable, deliverableIndex) => (
+                          <div key={deliverableIndex} className="flex items-center space-x-2">
+                            <svg className="w-4 h-4 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                            </svg>
+                            <span className="text-sm text-muted-foreground">{deliverable}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Target Businesses */}
       <div className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
