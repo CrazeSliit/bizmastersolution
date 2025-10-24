@@ -12,9 +12,10 @@ export default function BusinessModelSection() {
   const approaches = [
     {
       id: 1,
-      number: "01",
+      
       title: "Connecting Resources & Inventing Business Models",
       description: "We act as a strategic intermediary, bringing together products, ventures, investors, business locations, and skilled professionals to conceptualize, develop, and launch entirely new, profitable business models.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
       features: [
         "Strategic intermediary services",
         "Full business management responsibility",
@@ -28,9 +29,9 @@ export default function BusinessModelSection() {
     },
     {
       id: 2,
-      number: "02",
       title: "Direct Service through Six Pillars",
       description: "We provide comprehensive, customized services to ongoing businesses, startups, SMEs, and corporate-level clients through our six specialized pillars.",
+      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80",
       features: [
         "BIZtech Hub - IT & Technology Solutions",
         "BIZ Creative Forge - Branding & Digital Marketing",
@@ -43,9 +44,9 @@ export default function BusinessModelSection() {
     },
     {
       id: 3,
-      number: "03",
       title: "Direct Sales of Pillar-Specific Products",
       description: "Beyond bespoke services, we offer standardized products and solutions developed within our six pillars, providing accessible, high-quality tools and resources directly to businesses.",
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
       features: [
         "Innovative AI products & tools",
         "Operational base software solutions",
@@ -140,7 +141,7 @@ export default function BusinessModelSection() {
                 <div className={`space-y-6 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                   <div className="flex items-start space-x-4">
                     <div className="text-6xl font-bold text-primary/30">
-                      {approach.number}
+                      
                     </div>
                     <div>
                       <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
@@ -176,10 +177,36 @@ export default function BusinessModelSection() {
 
                 {/* Visual */}
                 <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8">
-                    <div className="w-full h-[400px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center">
-                      <div className="text-8xl font-bold text-primary/40">
-                        {approach.number}
+                  <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8 relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute inset-0 opacity-10">
+                      <div className="w-full h-full" style={{
+                        backgroundImage: 'radial-gradient(circle, var(--primary) 1px, transparent 1px)',
+                        backgroundSize: '20px 20px'
+                      }}></div>
+                    </div>
+                    
+                    <div className="relative w-full h-[400px] rounded-2xl overflow-hidden group">
+                      {/* Image */}
+                      <img 
+                        src={approach.image} 
+                        alt={approach.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-primary/30 flex items-center justify-center">
+                        <div className="text-center p-8">
+                          <div className="text-9xl font-bold text-white/30 mb-4">
+                           
+                          </div>
+                          <h3 className="text-2xl font-bold text-white mb-2">{approach.title.split(' ').slice(0, 3).join(' ')}</h3>
+                          <div className="flex flex-wrap gap-2 justify-center mt-4">
+                            <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">Strategic</span>
+                            <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">Scalable</span>
+                            <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">Proven</span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -190,34 +217,6 @@ export default function BusinessModelSection() {
         </div>
       </div>
 
-      {/* Success Metrics */}
-      <div className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Proven <span className="text-primary">Results</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Our three-pronged approach delivers measurable outcomes across all business dimensions
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
-            {[
-              { metric: "300%", label: "Average ROI Increase", icon: "📈" },
-              { metric: "85%", label: "Process Efficiency Gain", icon: "⚡" },
-              { metric: "95%", label: "Client Satisfaction Rate", icon: "🎯" },
-              { metric: "50+", label: "Successful Transformations", icon: "🚀" }
-            ].map((stat, index) => (
-              <div key={index} className="text-center p-8 bg-gradient-to-br from-primary/10 to-primary/5 rounded-3xl border border-primary/20 hover:border-primary/40 transition-all duration-300 hover:scale-105 group">
-                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
-                <div className="text-4xl lg:text-5xl font-bold text-primary mb-2">{stat.metric}</div>
-                <div className="text-muted-foreground font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
 
       {/* Implementation Timeline */}
       <div className="py-16 lg:py-24 bg-primary/5">

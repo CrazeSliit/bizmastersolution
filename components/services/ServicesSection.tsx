@@ -15,6 +15,7 @@ export default function ServicesSection() {
       name: "BIZtech Hub",
       subtitle: "IT & Technology Solutions",
       description: "Our dedicated IT & Technology solutions center specializing in customized operating systems and cutting-edge technological integrations.",
+      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
       icon: (
         <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -39,6 +40,7 @@ export default function ServicesSection() {
       name: "BIZ Creative Forge",
       subtitle: "Branding & Digital Marketing",
       description: "Where your brand comes to life through compelling design, visual identity, and performance-driven digital campaigns.",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
       icon: (
         <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2M7 4h10M7 4l-.5 14a2 2 0 002 2h7a2 2 0 002-2L17 4M9 9h6M9 13h6" />
@@ -64,6 +66,7 @@ export default function ServicesSection() {
       name: "BIZ Strategic Growth Center",
       subtitle: "Strategic Development & Execution",
       description: "The heart of our strategic development focusing on sales, marketing, business model development, and strategic execution.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
       icon: (
         <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
@@ -90,6 +93,7 @@ export default function ServicesSection() {
       name: "BIZ Advisor",
       subtitle: "Back-Office & Legal Support",
       description: "Comprehensive back-office support including business registration, accounting, HR, and legal services.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
       icon: (
         <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
@@ -110,6 +114,7 @@ export default function ServicesSection() {
       name: "BIZ Investor & Venture Hub",
       subtitle: "Investment & Partnership Solutions",
       description: "Strategic intermediary connecting business owners with investors, skilled professionals, and asset owners.",
+      image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&q=80",
       icon: (
         <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -133,6 +138,7 @@ export default function ServicesSection() {
       name: "BIZ Academy & Forum",
       subtitle: "Education & Community Building",
       description: "Hub for Business Excellence providing hands-on education and cultivating a dynamic business community.",
+      image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800&q=80",
       icon: (
         <svg className="w-10 h-10 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -246,20 +252,30 @@ export default function ServicesSection() {
                       }}></div>
                     </div>
                     
-                    <div className="relative w-full h-[400px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex flex-col items-center justify-center p-8">
-                      <div className="w-32 h-32 bg-primary rounded-3xl flex items-center justify-center mb-6 shadow-2xl">
-                        <div className="scale-150">
-                          {pillar.icon}
-                        </div>
-                      </div>
-                      <h3 className="text-2xl font-bold text-foreground text-center mb-2">{pillar.name}</h3>
-                      <p className="text-primary font-semibold text-center">{pillar.subtitle}</p>
+                    <div className="relative w-full h-[400px] rounded-2xl overflow-hidden group">
+                      {/* Image */}
+                      <img 
+                        src={pillar.image} 
+                        alt={pillar.name}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
                       
-                      {/* Feature highlights */}
-                      <div className="mt-6 flex flex-wrap gap-2 justify-center">
-                        <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">Professional</span>
-                        <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">Scalable</span>
-                        <span className="px-3 py-1 bg-primary/20 text-primary text-sm font-medium rounded-full">AI-Powered</span>
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/50 to-transparent flex flex-col items-center justify-end p-8">
+                        <div className="w-24 h-24 bg-primary rounded-3xl flex items-center justify-center mb-4 shadow-2xl">
+                          <div className="scale-125">
+                            {pillar.icon}
+                          </div>
+                        </div>
+                        <h3 className="text-2xl font-bold text-white text-center mb-2">{pillar.name}</h3>
+                        <p className="text-white/90 font-semibold text-center mb-4">{pillar.subtitle}</p>
+                        
+                        {/* Feature highlights */}
+                        <div className="flex flex-wrap gap-2 justify-center">
+                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">Professional</span>
+                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">Scalable</span>
+                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-medium rounded-full">AI-Powered</span>
+                        </div>
                       </div>
                     </div>
                   </div>

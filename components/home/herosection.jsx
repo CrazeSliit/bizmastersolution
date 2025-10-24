@@ -43,17 +43,15 @@ export default function HeroSection() {
         
             
             {/* Main Headline */}
-            <h1 className="text-4xl lg:text-6xl font-bold text-hero-text leading-tight">
-              Transforming 
-              <br />
-              <span className="bg-gradient-to-r from-hero-accent to-yellow-300 bg-clip-text text-transparent">
-                Businesses
-              </span>
-              <br />
-              into Industry 
-              <span className="text-hero-accent">Leaders</span>
+            <h1 className="text-5xl lg:text-7xl font-extrabold text-hero-text leading-tight tracking-tight">
+                <span className="block">Transforming</span>
+                <span className="block bg-gradient-to-r from-hero-accentbg-clip-text ">
+                    Businesses
+                </span>
+                <span className="block">into Industry</span>
+                <span className="block text-hero-accent drop-shadow-lg">Leaders</span>
             </h1>
-            
+
             {/* Subheadline */}
             <p className="text-xl lg:text-2xl text-hero-subtext leading-relaxed max-w-2xl">
               BIZmaster Solutions is your strategic growth partner — blending 
@@ -82,29 +80,27 @@ export default function HeroSection() {
                         </div>
                       </div>
                       
-                      {/* Right Column - Visual Content */}
-                              <div className="relative">
-                                {/* Main Hero Image */}
-                                <div className="relative z-10 group">
-                                  <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-                                    <img 
-                                      src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80"
-                                      alt="Business team working together"
-                                      className="w-full h-[600px] object-cover group-hover:scale-105 transition-transform duration-700"
-                                      style={{transform: `translateY(${scrollY * 0.05}px)`}}
-                                    />
-                                    {/* Overlay gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-hero-gradient-from/50 to-transparent"></div>
-                                  </div>
-                                </div>
-                                
-                                {/* Background Glow Effect */}
-                                <div className="absolute inset-0 bg-hero-accent/20 rounded-3xl blur-3xl scale-110 -z-10 animate-pulse"></div>
+                    {/* Right Column - Visual Content */}
+                                        <div className="relative -mt-8 lg:-mt-12">
+                                            /* Main Hero Image */
+                                            <div className="relative z-10 group">
+                                                <div className="relative overflow-hidden rounded-xl shadow-2xl">
+                                                    <img 
+                                                        src="/Untitled design (5).png"
+                                                        alt="Business team working together"
+                                                        className="w-[1000px] h-[750px] object-cover group-hover:scale-105 transition-transform duration-700"
+                                                        style={{transform: `translateY(${scrollY * 0.05}px)`}}
+                                                    />
+                                                    {/* Overlay gradient */}
+                                                </div>
+                                            </div>
+                                            
+                                            {/* Background Glow Effect */}
+                                            <div className="absolute inset-0 bg-hero-accent/20 rounded-3xl blur-3xl scale-110 -z-10 animate-pulse"></div>
+                                        </div>
+                                        </div>
 
-                              </div>
-                            </div>
-                            
-                            {/* Key Value Pillars */}
+                                        {/* Key Value Pillars */}
         <div className="mt-20 lg:mt-32">
           <h2 className="text-center text-3xl lg:text-4xl font-bold text-hero-text mb-4">
             Our <span className="text-hero-accent">Expertise</span> Pillars

@@ -48,16 +48,12 @@ export default function AboutSection() {
             </div>
             <div className="relative">
               <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-8">
-                <div className="w-full h-[400px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                      <svg className="w-12 h-12 text-primary-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                      </svg>
-                    </div>
-                    <div className="text-2xl font-bold text-foreground">Innovation</div>
-                    <div className="text-muted-foreground">Driving Growth</div>
-                  </div>
+                <div className="w-full h-[400px] bg-gradient-to-br from-primary/30 to-primary/10 rounded-2xl overflow-hidden">
+                  <img 
+                    src="/Untitled design (7).png" 
+                    alt="BIZmaster Solutions" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -284,64 +280,6 @@ export default function AboutSection() {
               </div>
               <h3 className="text-xl font-bold text-foreground mb-4">Innovation & Franchise</h3>
               <p className="text-muted-foreground">Committed to inventing new business models and developing scalable franchises</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Client Testimonials */}
-      <div className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              What Our <span className="text-primary">Clients Say</span>
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Success stories from businesses we&apos;ve transformed
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-background/80 backdrop-blur-sm rounded-3xl p-8 border border-primary/20 shadow-lg">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-2xl font-bold text-primary">TM</span>
-                </div>
-                <div>
-                  <div className="font-bold text-foreground">Tech Innovate Corp</div>
-                  <div className="text-sm text-muted-foreground">Startup → Market Leader</div>
-                </div>
-              </div>
-              <p className="text-muted-foreground mb-6">&ldquo;BIZmaster transformed our startup into a market leader. Their three-pronged approach and AI integration helped us scale 500% in just 18 months.&rdquo;</p>
-              <div className="flex text-primary text-xl">★★★★★</div>
-            </div>
-
-            <div className="bg-background/80 backdrop-blur-sm rounded-3xl p-8 border border-primary/20 shadow-lg">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-2xl font-bold text-primary">GS</span>
-                </div>
-                <div>
-                  <div className="font-bold text-foreground">GreenStyle Enterprises</div>
-                  <div className="text-sm text-muted-foreground">SME Transformation</div>
-                </div>
-              </div>
-              <p className="text-muted-foreground mb-6">&ldquo;From branding to financial planning, they handled everything. Our revenue increased by 300% and we now have a commanding brand presence.&rdquo;</p>
-              <div className="flex text-primary text-xl">★★★★★</div>
-            </div>
-
-            <div className="bg-background/80 backdrop-blur-sm rounded-3xl p-8 border border-primary/20 shadow-lg">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary/30 to-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-2xl font-bold text-primary">FL</span>
-                </div>
-                <div>
-                  <div className="font-bold text-foreground">FutureLab Industries</div>
-                  <div className="text-sm text-muted-foreground">Corporate Innovation</div>
-                </div>
-              </div>
-              <p className="text-muted-foreground mb-6">&ldquo;Their investor hub connected us with the right partners. We successfully launched three new ventures with their comprehensive support.&rdquo;</p>
-              <div className="flex text-primary text-xl">★★★★★</div>
             </div>
           </div>
         </div>
