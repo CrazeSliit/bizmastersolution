@@ -82,7 +82,7 @@ export default function HeroSection() {
                       
                     {/* Right Column - Visual Content */}
                                         <div className="relative -mt-8 lg:-mt-12">
-                                            /* Main Hero Image */
+                                        
                                             <div className="relative z-10 group">
                                                 <div className="relative overflow-hidden rounded-xl shadow-2xl">
                                                     <img 
