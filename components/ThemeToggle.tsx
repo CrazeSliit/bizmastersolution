@@ -14,7 +14,7 @@ export default function ThemeToggle() {
   // Prevent hydration mismatch by showing a placeholder until mounted
   if (!mounted) {
     return (
-      <div className="relative p-2 rounded-lg bg-black/20 border border-yellow-400/30 w-9 h-9">
+      <div className="relative p-2 rounded-lg bg-black/20 border border-bd1bfb-400/30 w-9 h-9">
         <div className="w-5 h-5 opacity-0" />
       </div>
     );
@@ -23,13 +23,13 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="relative p-2 rounded-lg bg-black/20 hover:bg-black/40 border border-yellow-400/30 hover:border-yellow-400/50 transition-all duration-300 group"
+      className="relative p-2 rounded-lg bg-black/20 hover:bg-black/40 border border-bd1bfb-400/30 hover:border-bd1bfb-400/50 transition-all duration-300 group"
       aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
       title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
     >
       {/* Sun Icon - visible in dark mode (when we can switch to light) */}
       <svg
-        className={`w-5 h-5 text-yellow-400 transition-all duration-300 ${
+        className={`w-5 h-5 text-bd1bfb-400 transition-all duration-300 ${
           theme === 'dark' ? 'rotate-0 scale-100 opacity-100' : 'rotate-90 scale-0 opacity-0'
         } absolute inset-2`}
         fill="none"

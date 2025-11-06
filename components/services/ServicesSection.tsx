@@ -32,7 +32,6 @@ export default function ServicesSection() {
         "Innovative AI products",
         "Web & mobile app development",
         "E-commerce platforms",
-        "Operational base software & tools"
       ]
     },
     {
@@ -47,17 +46,16 @@ export default function ServicesSection() {
         </svg>
       ),
       services: [
-        "Company color theme, tagline, logo design",
+        "Brand strategy development",
         "Vision/mission/profile development",
         "Graphics design and development",
         "Digital marketing strategy and execution",
         "Social media marketing (Facebook/Instagram/TikTok/YouTube)"
       ],
       products: [
-        "Logo/letterhead/invoice/business card design",
+        "Brand identity development",
         "Scroll-stopping content creation",
         "Performance-driven digital campaigns",
-        "Ringtone & company telecommunications integration",
         "Total digital campaign management"
       ]
     },

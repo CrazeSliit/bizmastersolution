@@ -15,8 +15,12 @@ export default function Navigation() {
             {/* Logo */}
             <div className="flex items-center">
               <div className="flex-shrink-0 flex items-center">
-                <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center mr-3 shadow-lg">
-                  <span className="text-primary-foreground font-bold text-lg">B</span>
+                <div className="w-12 h-12 rounded-full overflow-hidden mr-3 shadow-lg border-2 border-primary/20">
+                  <img 
+                    src="/loggggo.jpg" 
+                    alt="BizMaster Logo" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
                 <span className="text-xl font-bold text-foreground">
                   <span className="text-primary">Biz</span>Master
