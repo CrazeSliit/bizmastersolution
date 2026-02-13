@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: transparent;
+  --background: #ffffff;
   --foreground: #000000;
   --card: #f8f9fa;
   --card-foreground: #000000;
@@ -58,7 +58,7 @@
 }
 
 .dark {
-  --background: transparent;
+  --background: #000000;
   --foreground: #ffffff;
   --card: #1a1a1a;
   --card-foreground: #ffffff;
