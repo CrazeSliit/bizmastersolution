@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
+import Script from "next/script";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import "./globals.css";
 import Navigation from "../components/Navigation";
@@ -32,9 +33,18 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${merriweather.variable} font-sans antialiased h-full`}
       >
+        <Script
+          src="https://interfaces.zapier.com/assets/web-components/zapier-interfaces/zapier-interfaces.esm.js"
+          type="module"
+          strategy="afterInteractive"
+        />
         <ThemeProvider>
           <Navigation />
           {children}
+          <zapier-interfaces-chatbot-embed
+            is-popup="true"
+            chatbot-id="cmlks1rp900iqtvqlema1qrmo"
+          ></zapier-interfaces-chatbot-embed>
         </ThemeProvider>
       </body>
     </html>
