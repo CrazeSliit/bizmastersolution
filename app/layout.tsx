@@ -3,7 +3,7 @@ import { Inter, Merriweather } from "next/font/google";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import "./globals.css";
 import Navigation from "../components/Navigation";
-import ZapierChatbot from "../components/ZapierChatbot";
+import Chatbot from "../components/Chatbot";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -37,7 +37,7 @@ export default function RootLayout({
           <Navigation />
           {children}
         </ThemeProvider>
-        <ZapierChatbot />
+        <Chatbot />
       </body>
     </html>
   );
