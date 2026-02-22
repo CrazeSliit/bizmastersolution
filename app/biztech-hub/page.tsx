@@ -116,7 +116,7 @@ export default function BIZtechHubPage() {
                 AI-Powered Technology <span className="text-primary">At the Core</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                Every solution we build is infused with artificial intelligence. From predictive analytics to intelligent automation, we ensure your technology doesn't just function it thinks, adapts, and grows with your business.
+                Every solution we build is infused with artificial intelligence. From predictive analytics to intelligent automation, we ensure your technology doesn&apos;t just function — it thinks, adapts, and grows with your business.
               </p>
               <div className="space-y-4">
                 {['Smart ERP systems with real-time analytics', 'AI-driven customer engagement tools', 'Automated workflow and process optimization', 'Advanced data security and infrastructure'].map((point, i) => (

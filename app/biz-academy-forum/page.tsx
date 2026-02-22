@@ -140,7 +140,7 @@ export default function BIZAcademyForumPage() {
                 Learn, Connect, <span className="text-primary">and Grow Together</span>
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                Business doesn't grow in isolation. The BIZ Academy and Forum combines structured education with a dynamic peer community so you gain knowledge and build the relationships that open doors.
+                Business doesn&apos;t grow in isolation. The BIZ Academy and Forum combines structured education with a dynamic peer community so you gain knowledge and build the relationships that open doors.
               </p>
               <p className="text-lg text-muted-foreground leading-relaxed mb-8">
                 Our programs are designed by practitioners, not theorists. Every training module, workshop, and forum event is built around real-world application and measurable business outcomes.
