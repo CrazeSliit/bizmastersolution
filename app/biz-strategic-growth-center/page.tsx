@@ -71,19 +71,7 @@ export default function BIZStrategicGrowthCenterPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-16 border-y border-primary/10 bg-primary/5">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center">
-                <p className="text-4xl font-bold text-primary mb-2">{stat.value}</p>
-                <p className="text-muted-foreground font-medium">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Growth Framework */}
       <section className="py-24">
