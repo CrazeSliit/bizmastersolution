@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 
 export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -65,12 +66,12 @@ export default function HeroSection() {
             
             
                         <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                          <button className="group bg-hero-accent hover:bg-white text-black px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+                          <Link href="/services" className="group bg-hero-accent hover:bg-white text-black px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
                             Start Your Growth Journey
                             <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
-                          </button>
+                          </Link>
                           <button className="group backdrop-blur-sm bg-white/90 hover:bg-#580088 border border-hero-accent text-black px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center justify-center">
                             Explore Our Services
                             <svg className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
