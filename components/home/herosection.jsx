@@ -45,11 +45,11 @@ export default function HeroSection() {
             
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-extrabold text-hero-text leading-tight tracking-tight">
-                <span className="block">Transforming</span>
-                <span className="block bg-gradient-to-r from-hero-accentbg-clip-text ">
+                <span className="block" style={{color: '#A300A3'}}>Transforming</span>
+                <span className="block" style={{color: '#A300A3'}}>
                     Businesses
                 </span>
-                <span className="block">into Industry</span>
+                <span className="block" style={{color: '#A300A3'}}>into Industry</span>
                 <span className="block text-hero-accent drop-shadow-lg">Leaders</span>
             </h1>
 
@@ -124,8 +124,8 @@ export default function HeroSection() {
             
             {/* Sales & Growth */}
             <div className="group text-center p-6 backdrop-blur-sm bg-white/5 rounded-2xl border border-hero-accent/30 hover:bg-hero-accent/10 transition-all duration-300 hover:-translate-y-2">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-hero-accent">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#A300A3'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
@@ -146,8 +146,8 @@ export default function HeroSection() {
             
             {/* Finance & Legal */}
             <div className="group text-center p-6 backdrop-blur-sm bg-white/5 rounded-2xl border border-hero-accent/30 hover:bg-hero-accent/10 transition-all duration-300 hover:-translate-y-2">
-              <div className="w-16 h-16 mx-auto mb-4 bg-white rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border-2 border-hero-accent">
-                <svg className="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#A300A3'}}>
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>
               </div>

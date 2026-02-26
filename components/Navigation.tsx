@@ -98,9 +98,12 @@ export default function Navigation() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <span className="text-xl font-bold text-foreground">
-                  <span className="text-primary">Biz</span>Master
-                </span>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-xl font-bold text-foreground">
+                    <span className="text-primary">Biz</span>Master
+                  </span>
+                  <span className="text-sm font-semibold text-primary tracking-widest">Solutions</span>
+                </div>
               </div>
             </div>
 

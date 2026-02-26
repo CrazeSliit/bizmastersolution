@@ -1,10 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const client = new OpenAI({
-  apiKey: process.env.NVIDIA_API_KEY,
-  baseURL: 'https://integrate.api.nvidia.com/v1',
-});
 
 const SYSTEM_PROMPT = `You are a helpful assistant ONLY for BIZmaster Solutions website. You must ONLY answer questions related to BIZmaster Solutions — its services, vision, mission, and how it helps businesses grow.
 
@@ -83,6 +79,10 @@ export async function POST(req: NextRequest) {
     }
 
     try {
+      const client = new OpenAI({
+        apiKey: process.env.NVIDIA_API_KEY,
+        baseURL: 'https://integrate.api.nvidia.com/v1',
+      });
       const response = await client.chat.completions.create({
         model: 'meta/llama-3.1-8b-instruct',
         messages: [
