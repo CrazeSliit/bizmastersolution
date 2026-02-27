@@ -45,21 +45,18 @@ export default function HeroSection() {
             
             {/* Main Headline */}
             <h1 className="text-5xl lg:text-7xl font-extrabold text-hero-text leading-tight tracking-tight">
-                <span className="block" style={{color: '#A300A3'}}>Transforming</span>
-                <span className="block" style={{color: '#A300A3'}}>
+                <span className="block" style={{color: '#5D0E8B'}}>Transforming</span>
+                <span className="block" style={{color: '#5D0E8B'}}>
                     Businesses
                 </span>
-                <span className="block" style={{color: '#A300A3'}}>into Industry</span>
+                <span className="block" style={{color: '#5D0E8B'}}>into Industry</span>
                 <span className="block text-hero-accent drop-shadow-lg">Leaders</span>
             </h1>
 
             {/* Subheadline */}
             <p className="text-xl lg:text-2xl text-hero-subtext leading-relaxed max-w-2xl">
-              BIZmaster Solutions is your strategic growth partner blending 
-              <span className="text-hero-accent font-semibold"> AI innovation</span>, 
-              <span className="text-hero-accent font-semibold"> branding</span>, 
-              <span className="text-hero-accent font-semibold"> finance</span>, and 
-              <span className="text-hero-accent font-semibold"> execution</span> to take your business to the next level.
+              BIZmaster Solutions is your strategic growth partner blending AI innovation,cuting edge Technology, branding, finance, legal, and set strategic plan for execution to take your business to the next level.
+            
             </p>
             
 
@@ -124,7 +121,7 @@ export default function HeroSection() {
             
             {/* Sales & Growth */}
             <div className="group text-center p-6 backdrop-blur-sm bg-white/5 rounded-2xl border border-hero-accent/30 hover:bg-hero-accent/10 transition-all duration-300 hover:-translate-y-2">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#A300A3'}}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#5D0E8B'}}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
@@ -146,7 +143,7 @@ export default function HeroSection() {
             
             {/* Finance & Legal */}
             <div className="group text-center p-6 backdrop-blur-sm bg-white/5 rounded-2xl border border-hero-accent/30 hover:bg-hero-accent/10 transition-all duration-300 hover:-translate-y-2">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#A300A3'}}>
+              <div className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style={{backgroundColor: '#5D0E8B'}}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                 </svg>

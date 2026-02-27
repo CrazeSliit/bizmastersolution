@@ -35,7 +35,9 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <Navigation />
+          <div className="pt-14">
           {children}
+          </div>
         </ThemeProvider>
         <ChatbaseWidget />
       </body>
