@@ -69,18 +69,18 @@ export default function Navigation() {
   return (
     <nav className="w-full z-50 fixed top-0 left-0" style={{ backgroundColor: '#5D0E8B' }}>
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-14">
+        <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5 flex-shrink-0">
-            <div className="w-9 h-9 rounded-full overflow-hidden border-2 border-white/30">
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/30">
               <img src="/loggggo.jpg" alt="BizMaster Logo" className="w-full h-full object-cover" />
             </div>
-            <div className="flex flex-col leading-none">
-              <span className="text-base font-bold text-white tracking-wide">
-                <span className="text-yellow-300">BIZ</span>master
+            <div className="flex flex-col gap-0">
+              <span className="text-2xl font-bold text-white tracking-wide leading-none">
+                <span className="text-white-300">BIZ</span>master
               </span>
-              <span className="text-[10px] font-semibold text-white/70 tracking-widest uppercase">solutions</span>
+              <span className="text-2xl font-bold tracking-widest leading-none">solutions</span>
             </div>
           </Link>
 
