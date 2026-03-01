@@ -73,14 +73,10 @@ export default function Navigation() {
 
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white/30">
-              <img src="/loggggo.jpg" alt="BizMaster Logo" className="w-full h-full object-cover" />
-            </div>
+            <img src="/lodddgo.png" alt="BizMaster Logo" className="h-19 w-auto object-contain" />
             <div className="flex flex-col gap-0">
-              <span className="text-2xl font-bold text-white tracking-wide leading-none">
-                <span className="text-white-300">BIZ</span>master
-              </span>
-              <span className="text-2xl font-bold tracking-widest leading-none">solutions</span>
+              <span className="text-2xl font-bold text-white tracking-wide leading-tight">BIZmaster</span>
+              <span className="text-2xl font-bold text-white tracking-widest leading-tight">solutions</span>
             </div>
           </Link>
 
