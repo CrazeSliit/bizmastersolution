@@ -3,6 +3,7 @@ import { Inter, Merriweather } from "next/font/google";
 import { ThemeProvider } from "../contexts/ThemeContext";
 import "./globals.css";
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import ChatbaseWidget from "../components/ChatbaseWidget";
 
 const inter = Inter({
@@ -36,8 +37,9 @@ export default function RootLayout({
         <ThemeProvider>
           <Navigation />
           <div className="pt-14">
-          {children}
+            {children}
           </div>
+          <Footer />
         </ThemeProvider>
         <ChatbaseWidget />
       </body>
