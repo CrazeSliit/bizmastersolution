@@ -22,16 +22,16 @@ const stats = [
 
 const sliderImages = [
   {
-    src: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1200&q=90',
-    alt: 'Cybersecurity & Network Technology',
+    src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=1200&q=90',
+    alt: 'Artificial Intelligence',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1200&q=90',
-    alt: 'AI & Machine Learning Innovation',
+    src: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=1200&q=90',
+    alt: 'Coding & Development',
   },
   {
-    src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=90',
-    alt: 'Software Development & Coding',
+    src: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=90',
+    alt: 'Mobile App Development',
   },
 ]
 

@@ -5,6 +5,7 @@ import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
 import ChatbaseWidget from "../components/ChatbaseWidget";
+import WhatsAppButton from "../components/WhatsAppButton";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -41,6 +42,7 @@ export default function RootLayout({
           </div>
           <Footer />
         </ThemeProvider>
+        <WhatsAppButton />
         <ChatbaseWidget />
       </body>
     </html>

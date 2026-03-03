@@ -309,14 +309,69 @@ export default function Chatbot() {
         </div>
       )}
 
-      {/* Toggle Button */}
+      {/* WhatsApp Button - Right Side, above chatbot */}
+      <div style={{ position: 'fixed', bottom: '104px', right: '16px', zIndex: 9999, display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '6px' }}>
+        {/* Label */}
+        <div style={{
+          background: '#075E54',
+          color: 'white',
+          fontSize: '12px',
+          fontWeight: 700,
+          padding: '4px 10px',
+          borderRadius: '12px',
+          whiteSpace: 'nowrap',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+          letterSpacing: '0.3px',
+        }}>
+          WhatsApp Us
+        </div>
+        {/* Pulse + Button */}
+        <div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{
+            position: 'absolute',
+            width: '72px',
+            height: '72px',
+            borderRadius: '50%',
+            background: 'rgba(37,211,102,0.35)',
+            animation: 'waPulse 2s ease-in-out infinite',
+          }} />
+          <a
+            href="https://wa.me/94777960231"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Chat on WhatsApp"
+            style={{
+              position: 'relative',
+              width: '62px',
+              height: '62px',
+              borderRadius: '50%',
+              background: '#25D366',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              boxShadow: '0 6px 20px rgba(37,211,102,0.55)',
+              transition: 'transform 0.2s',
+              textDecoration: 'none',
+            }}
+            onMouseEnter={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1.1)'; }}
+            onMouseLeave={(e) => { (e.currentTarget as HTMLAnchorElement).style.transform = 'scale(1)'; }}
+          >
+            <svg width="34" height="34" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 2C8.268 2 2 8.268 2 16c0 2.49.675 4.82 1.852 6.82L2 30l7.42-1.82A13.94 13.94 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2z" fill="white"/>
+              <path d="M22.895 19.58c-.294-.148-1.74-.858-2.01-.956-.27-.098-.467-.147-.663.148-.196.294-.76.956-.932 1.153-.172.196-.343.22-.637.073-.294-.148-1.24-.457-2.362-1.457-.873-.779-1.463-1.74-1.634-2.035-.172-.294-.018-.453.129-.6.132-.131.294-.343.441-.514.148-.172.196-.294.294-.49.098-.197.049-.368-.025-.515-.073-.148-.663-1.598-.908-2.187-.24-.574-.482-.496-.663-.505-.172-.008-.368-.01-.564-.01-.196 0-.515.073-.784.368-.27.294-1.03 1.006-1.03 2.453 0 1.448 1.054 2.846 1.2 3.042.148.196 2.076 3.17 5.03 4.446.703.303 1.252.484 1.679.62.706.224 1.348.192 1.856.116.566-.084 1.74-.712 1.986-1.4.245-.687.245-1.276.172-1.4-.073-.123-.27-.196-.564-.343z" fill="#25D366"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Chatbot Toggle Button */}
       <button
         onClick={() => setIsOpen((prev) => !prev)}
         style={{
           position: 'fixed',
           bottom: '24px',
           right: '24px',
-          zIndex: 50,
+          zIndex: 9999,
           width: '60px',
           height: '60px',
           borderRadius: '50%',
@@ -354,6 +409,11 @@ export default function Chatbot() {
         @keyframes bounce {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-4px); }
+        }
+        @keyframes waPulse {
+          0% { transform: scale(0.95); opacity: 0.8; }
+          70% { transform: scale(1.35); opacity: 0; }
+          100% { transform: scale(0.95); opacity: 0; }
         }
       `}</style>
     </>
