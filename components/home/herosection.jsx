@@ -63,13 +63,13 @@ export default function HeroSection() {
             
             
                         <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                          <Link href="/services" className="group bg-hero-accent hover:bg-white text-black px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+                          <Link href="/services" className="group bg-hero-accent hover:bg-purple text-white px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
                             Start Your Growth Journey
                             <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                           </Link>
-                          <button className="group backdrop-blur-sm bg-white/90 hover:bg-#580088 border border-hero-accent text-black px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center justify-center">
+                          <button className="group backdrop-blur-sm bg-white/90 hover:bg-#580088 border border-hero-accent text-purple px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center justify-center">
                             Explore Our Services
                             <svg className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -100,8 +100,8 @@ export default function HeroSection() {
 
                                         {/* Key Value Pillars */}
         <div className="mt-20 lg:mt-32">
-          <h2 className="text-center text-3xl lg:text-4xl font-bold text-hero-text mb-4">
-            Our <span className="text-hero-accent">Expertise</span> Pillars
+          <h2 className="text-center text-3xl lg:text-4xl font-bold mb-4">
+            <span style={{color: '#5D0E8B'}}>Our</span> <span style={{color: '#5D0E8B'}}>Expertise</span> <span style={{color: '#5D0E8B'}}>Pillars</span>
           </h2>
           <p className="text-center text-hero-subtext mb-12 max-w-3xl mx-auto">
             Comprehensive solutions designed to accelerate your business transformation

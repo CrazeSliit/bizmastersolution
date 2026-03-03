@@ -136,8 +136,8 @@ export default function ContactSection() {
       <div className="relative pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className={`text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Get in <span className="text-primary">Touch</span>
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+              Get in Touch
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               Ready to transform your business? Let&apos;s discuss how BIZmaster Solutions can accelerate your growth and success
@@ -358,8 +358,8 @@ export default function ContactSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Multiple Ways to <span className="text-primary">Connect</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Multiple Ways to Connect
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Choose the communication method that works best for your business needs and urgency level

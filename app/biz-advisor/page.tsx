@@ -29,11 +29,34 @@ const whyChoose = [
   { title: 'Transparent Pricing', description: 'Clear, fixed-fee structures with no hidden costs or surprise invoices.' },
 ]
 
+const sliderImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&q=90',
+    alt: 'Business Advisory Consultation',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1200&q=90',
+    alt: 'Legal & Compliance Documents',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1200&q=90',
+    alt: 'Financial Accounting',
+  },
+]
+
 export default function BIZAdvisorPage() {
   const [visible, setVisible] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {
     setVisible(true)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % sliderImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -46,28 +69,56 @@ export default function BIZAdvisorPage() {
         <div className="absolute top-40 right-0 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              <span>Back-Office &amp; Legal Support</span>
+          <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Left: Text Content */}
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span>Back-Office &amp; Legal Support</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+                BIZ Advisor
+              </h1>
+              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
+                Your trusted back-office partner. We handle the complex operational, financial, and legal foundations of your business so you can focus entirely on growth.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
+                  Get Expert Advice
+                </Link>
+                <Link href="/services" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                  Explore Services
+                </Link>
+              </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              BIZ <span className="text-primary">Advisor</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-10">
-              Your trusted back-office partner. We handle the complex operational, financial, and legal foundations of your business so you can focus entirely on growth.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
-                Get Expert Advice
-              </Link>
-              <Link href="/services" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                Explore Services
-              </Link>
+            {/* Right: Image Slider */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-4 overflow-hidden">
+                <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+                  {sliderImages.map((image, i) => (
+                    <img
+                      key={i}
+                      src={image.src}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-2 mt-4">
+                  {sliderImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentImage(i)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${i === currentImage ? 'bg-primary w-6' : 'bg-primary/30 w-2.5'}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -78,8 +129,8 @@ export default function BIZAdvisorPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Advisory <span className="text-primary">Services</span>
+            <h2 className="text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Advisory Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Comprehensive back-office solutions that keep your business compliant, organized, and positioned for sustainable growth.
@@ -107,8 +158,8 @@ export default function BIZAdvisorPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                Why Businesses Trust <span className="text-primary">BIZ Advisor</span>
+              <h2 className="text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+                Why Businesses Trust BIZ Advisor
               </h2>
               <div className="space-y-6">
                 {whyChoose.map((item, i) => (

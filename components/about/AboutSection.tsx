@@ -15,8 +15,8 @@ export default function AboutSection() {
       <div className="relative pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className={`text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              About <span className="text-primary">BIZmaster Solutions</span>
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+              <span style={{color: '#5D0E8B'}}>About BIZmaster Solutions</span>
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               Your Strategic Growth Partner - Empowering Businesses for Next-Level Success
@@ -30,7 +30,7 @@ export default function AboutSection() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
+              <h2 className="text-3xl lg:text-4xl font-bold" style={{color: '#5D0E8B'}}>
                 Who We Are
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
@@ -65,8 +65,8 @@ export default function AboutSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Our Unique <span className="text-primary">Three-Pronged</span> Approach
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Our Unique Three-Pronged Approach
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Addressing diverse market needs through interconnected channels
@@ -105,7 +105,7 @@ export default function AboutSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
               Our Vision & Mission
             </h2>
           </div>
@@ -153,8 +153,8 @@ export default function AboutSection() {
       <div className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Our <span className="text-primary">Expertise</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Our Expertise
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Our expertise spans cutting-edge technology, strategic solutions, and comprehensive business support
@@ -213,8 +213,8 @@ export default function AboutSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Why Partner with <span className="text-primary">BIZmaster Solutions?</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Why Partner with BIZmaster Solutions?
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               We offer more than just consulting - we&apos;re your comprehensive execution partner

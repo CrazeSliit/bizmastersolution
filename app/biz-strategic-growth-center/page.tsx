@@ -27,11 +27,34 @@ const pillars = [
   { title: 'Monitor', description: 'Track performance, adapt to change, and continuously optimize for results.' },
 ]
 
+const sliderImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=90',
+    alt: 'Business Growth Analytics',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&q=90',
+    alt: 'Strategy Team Meeting',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&q=90',
+    alt: 'Business Professional',
+  },
+]
+
 export default function BIZStrategicGrowthCenterPage() {
   const [visible, setVisible] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {
     setVisible(true)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % sliderImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -44,28 +67,56 @@ export default function BIZStrategicGrowthCenterPage() {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
-              <span>Strategic Development &amp; Execution</span>
+          <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Left: Text Content */}
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                </svg>
+                <span>Strategic Development &amp; Execution</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+                BIZ Strategic Growth Center
+              </h1>
+              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
+                The engine behind your business growth. We design, build, and execute comprehensive strategies that transform ambitious goals into measurable, sustainable results.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
+                  Start Your Growth Plan
+                </Link>
+                <Link href="/services" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                  Explore Services
+                </Link>
+              </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              BIZ Strategic <span className="text-primary">Growth Center</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-10">
-              The engine behind your business growth. We design, build, and execute comprehensive strategies that transform ambitious goals into measurable, sustainable results.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
-                Start Your Growth Plan
-              </Link>
-              <Link href="/services" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                Explore Services
-              </Link>
+            {/* Right: Image Slider */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-4 overflow-hidden">
+                <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+                  {sliderImages.map((image, i) => (
+                    <img
+                      key={i}
+                      src={image.src}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-2 mt-4">
+                  {sliderImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentImage(i)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${i === currentImage ? 'bg-primary w-6' : 'bg-primary/30 w-2.5'}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -77,8 +128,8 @@ export default function BIZStrategicGrowthCenterPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Our Growth <span className="text-primary">Framework</span>
+            <h2 className="text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Our Growth Framework
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A proven four-phase approach to delivering consistent, compounding business growth.
@@ -103,8 +154,8 @@ export default function BIZStrategicGrowthCenterPage() {
       <section className="py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Strategic <span className="text-primary">Services</span>
+            <h2 className="text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Strategic Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               Every service is designed to move the needle on your most critical growth metrics.
@@ -132,8 +183,8 @@ export default function BIZStrategicGrowthCenterPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                Strategy Without Execution <span className="text-primary">Is Just a Dream</span>
+              <h2 className="text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+                Strategy Without Execution Is Just a Dream
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Most consulting firms hand you a plan and walk away. We stay in the trenches with you executing, monitoring, and continuously refining until your goals are achieved.

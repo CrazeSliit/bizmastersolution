@@ -27,12 +27,35 @@ const community = [
   { title: 'Expert Q&A Sessions', description: 'Monthly live sessions with industry experts covering the most pressing business topics.' },
 ]
 
+const sliderImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1200&q=90',
+    alt: 'Business Education & Training',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=90',
+    alt: 'Conference & Networking Event',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1559223607-a43c990c692c?w=1200&q=90',
+    alt: 'Business Community Forum',
+  },
+]
+
 export default function BIZAcademyForumPage() {
   const [visible, setVisible] = useState(false)
   const [activeTab, setActiveTab] = useState<'programs' | 'community'>('programs')
+  const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {
     setVisible(true)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % sliderImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -46,28 +69,56 @@ export default function BIZAcademyForumPage() {
         <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-2xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-              <span>Education &amp; Community Building</span>
+          <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Left: Text Content */}
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+                <span>Education &amp; Community Building</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+                BIZ Academy &amp; Forum
+              </h1>
+              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
+                The hub for business excellence. Develop your skills through world-class training programs and join a thriving community of entrepreneurs, leaders, and innovators.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
+                  Join the Academy
+                </Link>
+                <Link href="/contact" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                  Join the Forum
+                </Link>
+              </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              BIZ Academy <span className="text-primary">&amp; Forum</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-10">
-              The hub for business excellence. Develop your skills through world-class training programs and join a thriving community of entrepreneurs, leaders, and innovators.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
-                Join the Academy
-              </Link>
-              <Link href="/contact" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                Join the Forum
-              </Link>
+            {/* Right: Image Slider */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-4 overflow-hidden">
+                <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+                  {sliderImages.map((image, i) => (
+                    <img
+                      key={i}
+                      src={image.src}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-2 mt-4">
+                  {sliderImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentImage(i)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${i === currentImage ? 'bg-primary w-6' : 'bg-primary/30 w-2.5'}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -80,8 +131,8 @@ export default function BIZAcademyForumPage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Academy &amp; <span className="text-primary">Community</span>
+            <h2 className="text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Academy &amp; Community
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Two powerful offerings  expert-led training programs and an active business community working together to accelerate your growth.
@@ -125,8 +176,8 @@ export default function BIZAcademyForumPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                Learn, Connect, <span className="text-primary">and Grow Together</span>
+              <h2 className="text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+                Learn, Connect, and Grow Together
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 Business doesn&apos;t grow in isolation. The BIZ Academy and Forum combines structured education with a dynamic peer community so you gain knowledge and build the relationships that open doors.

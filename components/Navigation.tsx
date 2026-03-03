@@ -72,12 +72,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-20">
 
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-            <img src="/lodddgo.png" alt="BizMaster Logo" className="h-19 w-auto object-contain" />
-            <div className="flex flex-col gap-0">
-              <span className="text-2xl font-bold text-white tracking-wide leading-tight">BIZmaster</span>
-              <span className="text-2xl font-bold text-white tracking-widest leading-tight">solutions</span>
-            </div>
+          <Link href="/" className="flex items-center flex-shrink-0">
+            <img src="/nw_logo.png" alt="BizMaster Solutions Logo" className="h-40 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav Links */}

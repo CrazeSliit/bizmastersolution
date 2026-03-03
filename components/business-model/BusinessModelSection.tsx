@@ -66,8 +66,8 @@ export default function BusinessModelSection() {
       <div className="relative pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className={`text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Our Unique <span className="text-primary">Business Model</span>
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+              Our Unique Business Model
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               A Three-Pronged Approach that addresses diverse market needs through interconnected channels, fostering long-term business partnerships and collective growth
@@ -80,8 +80,8 @@ export default function BusinessModelSection() {
       <div className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              What Makes Us <span className="text-primary">Different</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+              What Makes Us Different
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               BIZmaster Solutions operates on a distinctive model that goes beyond traditional consulting to become your comprehensive execution partner
@@ -126,8 +126,8 @@ export default function BusinessModelSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Our <span className="text-primary">Three-Pronged</span> Approach
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+              Our Three-Pronged Approach
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Three interconnected channels that address diverse market needs and foster long-term partnerships
@@ -222,8 +222,8 @@ export default function BusinessModelSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Implementation <span className="text-primary">Timeline</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Implementation Timeline
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               A structured approach to business transformation with clear milestones and deliverables
@@ -302,8 +302,8 @@ export default function BusinessModelSection() {
       <div className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
-              Who We <span className="text-primary">Empower</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+              Who We Empower
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               We focus on empowering businesses at every stage to reach their full potential

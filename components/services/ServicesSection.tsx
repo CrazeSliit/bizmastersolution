@@ -164,8 +164,8 @@ export default function ServicesSection() {
       <div className="relative pt-24 lg:pt-32 pb-16 lg:pb-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className={`text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
-            <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
-              Our <span className="text-primary">Core Service</span> Pillars
+            <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+              Our Core Service Pillars
             </h1>
             <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed max-w-4xl mx-auto">
               Six specialized pillars delivering tailored, scalable solutions to address specific challenges and drive growth across various business functions
@@ -293,8 +293,8 @@ export default function ServicesSection() {
       <div className="py-16 lg:py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4">
-              Why Choose Our <span className="text-primary">Service Model</span>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Why Choose Our Service Model
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
               Compare traditional consulting vs. our comprehensive execution partnership

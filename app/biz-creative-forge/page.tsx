@@ -27,11 +27,34 @@ const process = [
   { step: '04', title: 'Launch & Optimize', description: 'We deploy campaigns and continuously optimize for maximum performance and ROI.' },
 ]
 
+const sliderImages = [
+  {
+    src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&q=90',
+    alt: 'Creative Design Workspace',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=90',
+    alt: 'Graphic Design & Branding',
+  },
+  {
+    src: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1200&q=90',
+    alt: 'Social Media Marketing',
+  },
+]
+
 export default function BIZCreativeForgePage() {
   const [visible, setVisible] = useState(false)
+  const [currentImage, setCurrentImage] = useState(0)
 
   useEffect(() => {
     setVisible(true)
+  }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % sliderImages.length)
+    }, 5000)
+    return () => clearInterval(interval)
   }, [])
 
   return (
@@ -44,28 +67,56 @@ export default function BIZCreativeForgePage() {
         <div className="absolute top-20 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-6">
-          <div className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-            <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              <span>Branding &amp; Digital Marketing</span>
+          <div className={`grid lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+            {/* Left: Text Content */}
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>Branding &amp; Digital Marketing</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6" style={{color: '#5D0E8B'}}>
+                BIZ Creative Forge
+              </h1>
+              <p className="text-xl lg:text-2xl text-muted-foreground leading-relaxed mb-10">
+                Where your brand comes to life. We craft compelling visual identities, magnetic content, and performance-driven digital campaigns that convert audiences into loyal customers.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
+                  Build My Brand
+                </Link>
+                <Link href="/services" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
+                  Explore Services
+                </Link>
+              </div>
             </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-foreground leading-tight mb-6">
-              BIZ Creative <span className="text-primary">Forge</span>
-            </h1>
-            <p className="text-xl lg:text-2xl text-muted-foreground max-w-3xl leading-relaxed mb-10">
-              Where your brand comes to life. We craft compelling visual identities, magnetic content, and performance-driven digital campaigns that convert audiences into loyal customers.
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link href="/contact" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25">
-                Build My Brand
-              </Link>
-              <Link href="/services" className="bg-primary/10 hover:bg-primary/20 border border-primary/30 text-foreground px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300">
-                Explore Services
-              </Link>
+            {/* Right: Image Slider */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-primary/20 to-primary/5 rounded-3xl p-4 overflow-hidden">
+                <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl">
+                  {sliderImages.map((image, i) => (
+                    <img
+                      key={i}
+                      src={image.src}
+                      alt={image.alt}
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${i === currentImage ? 'opacity-100' : 'opacity-0'}`}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center gap-2 mt-4">
+                  {sliderImages.map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setCurrentImage(i)}
+                      className={`h-2.5 rounded-full transition-all duration-300 ${i === currentImage ? 'bg-primary w-6' : 'bg-primary/30 w-2.5'}`}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -77,8 +128,8 @@ export default function BIZCreativeForgePage() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Creative <span className="text-primary">Services</span>
+            <h2 className="text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Creative Services
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               From brand foundation to viral digital campaigns everything you need to stand out and grow.
@@ -105,8 +156,8 @@ export default function BIZCreativeForgePage() {
       <section className="py-24 bg-primary/5">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground mb-4">
-              Our Creative <span className="text-primary">Process</span>
+            <h2 className="text-4xl font-bold mb-4" style={{color: '#5D0E8B'}}>
+              Our Creative Process
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               A structured approach to building brands that resonate and campaigns that perform.
@@ -140,8 +191,8 @@ export default function BIZCreativeForgePage() {
               </div>
             </div>
             <div>
-              <h2 className="text-4xl font-bold text-foreground mb-6">
-                More Than Design <span className="text-primary">Brand Authority</span>
+              <h2 className="text-4xl font-bold mb-6" style={{color: '#5D0E8B'}}>
+                More Than Design Brand Authority
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                 We don&apos;t just make things look good. We build brand authority. Every asset we create is engineered to communicate trust, expertise, and distinction across every touchpoint.
