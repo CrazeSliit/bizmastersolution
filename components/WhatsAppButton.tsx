@@ -32,7 +32,7 @@ export default function WhatsAppButton() {
         </div>
 
         {/* Button with pulse */}
-        <div style={{ position: 'relative', width: '64px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ position: 'relative', width: '64px', height: '140px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           {/* Animated pulse ring */}
           <span
             style={{

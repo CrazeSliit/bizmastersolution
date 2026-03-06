@@ -8,12 +8,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-4">
-              <img src="/loggggo.jpg" alt="BizMaster Logo" className="h-12 w-auto object-contain" />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold tracking-wide leading-tight">BIZmaster</span>
-                <span className="text-xl font-bold tracking-widest leading-tight">solutions</span>
-              </div>
+            <Link href="/" className="flex items-start gap-1 -mt-14 -ml-4">
+              <img src="/nw_logo.png" alt="BizMaster Logo" className="h-[180px] w-auto object-contain" />
             </Link>
             <p className="text-white/70 text-sm leading-relaxed">
               Empowering businesses with next-gen solutions across technology, strategy, branding, finance, and investment.
