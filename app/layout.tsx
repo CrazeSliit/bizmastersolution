@@ -21,7 +21,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
-  title: "BizMaster Solution",
+  title: "BIZmaster Solution",
   description: "Professional business management solution",
 };
 
