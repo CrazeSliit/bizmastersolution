@@ -216,7 +216,7 @@ export default function BIZtechHubPage() {
               AI Chatbots For Website + WhatsApp
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              We build both website chatbots and WhatsApp chatbots with product-wise API integration. Product-wise API හදලා දෙනවා, so each product can have its own flow, answers, and automation rules.
+              We build both website chatbots and WhatsApp chatbots with product-wise API integration. 
             </p>
           </div>
 
