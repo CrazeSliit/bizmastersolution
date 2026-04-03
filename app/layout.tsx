@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
 import { ThemeProvider } from "../contexts/ThemeContext";
-// @ts-expect-error -- Next.js supports global CSS side-effect imports here
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
