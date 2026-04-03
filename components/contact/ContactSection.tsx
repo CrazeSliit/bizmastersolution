@@ -83,7 +83,7 @@ export default function ContactSection() {
         </svg>
       ),
       title: "Email Us",
-      details: ["info@bizmaster.lk", ""],
+      details: ["info@bizmastersolutions.lk", ""],
       description: "Send us an email and we'll respond within 24 hours"
     },
     {
@@ -93,7 +93,7 @@ export default function ContactSection() {
         </svg>
       ),
       title: "Call Us",
-      details: ["0777960231", ""],
+      details: ["0114221605", ""],
       description: "Call us during business hours for immediate assistance"
     },
     {
@@ -104,7 +104,7 @@ export default function ContactSection() {
         </svg>
       ),
       title: "Visit Us",
-      details: ["231/A Athurugiriya Road,Malabe", ""],
+      details: ["9th Floor,ICC Techno Hub,Chandrika Kumarathunga Mawatha,Malabe", ""],
       description: "Schedule an appointment to visit our headquarters"
     },
     {

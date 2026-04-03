@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
 import { ThemeProvider } from "../contexts/ThemeContext";
+// @ts-expect-error -- Next.js supports global CSS side-effect imports here
 import "./globals.css";
 import Navigation from "../components/Navigation";
 import Footer from "../components/Footer";
@@ -104,7 +105,7 @@ export default function RootLayout({
       "BIZmaster Solutions is Sri Lanka's leading business development company helping enterprises grow through AI, Sales, Branding, Finance, and Investor services.",
     contactPoint: {
       "@type": "ContactPoint",
-      email: "info@bizmaster.lk",
+      email: "info@bizmastersolutions.lk",
       contactType: "customer service",
     },
     sameAs: [
