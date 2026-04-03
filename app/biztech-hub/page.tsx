@@ -35,6 +35,25 @@ const sliderImages = [
   },
 ]
 
+const chatbotSolutions = [
+  {
+    title: 'AI Website Chatbot',
+    description:
+      'Deploy an AI assistant on your website to handle customer questions, capture leads, and guide visitors to the right products instantly.',
+    ctaLabel: 'Use Website Chatbot',
+    ctaHref: '#website-chatbot',
+    note: 'Live on your site 24/7 with multilingual support and product recommendations.',
+  },
+  {
+    title: 'AI WhatsApp Chatbot',
+    description:
+      'Launch a WhatsApp AI chatbot for instant support, order updates, and sales conversations where your customers are most active.',
+    ctaLabel: 'Open WhatsApp Chatbot',
+    ctaHref: 'https://wa.me/+94781760086?text=Hi%20BIZmaster%2C%20I%20need%20an%20AI%20WhatsApp%20chatbot%20with%20product-wise%20API%20integration.',
+    note: 'Great for auto-replies, smart follow-ups, and faster conversions.',
+  },
+]
+
 export default function BIZtechHubPage() {
   const [visible, setVisible] = useState(false)
   const [currentImage, setCurrentImage] = useState(0)
@@ -182,6 +201,165 @@ export default function BIZtechHubPage() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section id="website-chatbot" className="py-24 bg-primary/5">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-sm font-semibold mb-4">
+              New Information Section
+            </span>
+            <h2 className="text-4xl font-bold mb-4" style={{ color: '#5D0E8B' }}>
+              AI Chatbots For Website + WhatsApp
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              We build both website chatbots and WhatsApp chatbots with product-wise API integration. Product-wise API හදලා දෙනවා, so each product can have its own flow, answers, and automation rules.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            <div className="bg-background border border-primary/20 rounded-2xl p-7">
+              <h3 className="text-2xl font-bold text-foreground mb-4">AI Website Chatbot</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Add an intelligent chatbot directly to your website to handle visitor questions, product guidance, lead capture, and customer support in real time.
+              </p>
+              <ul className="space-y-2 text-sm text-foreground">
+                <li>24/7 instant customer responses</li>
+                <li>Product suggestions by user intent</li>
+                <li>Lead collection and CRM handoff</li>
+              </ul>
+            </div>
+
+            <div className="bg-background border border-primary/20 rounded-2xl p-7">
+              <h3 className="text-2xl font-bold text-foreground mb-4">AI WhatsApp Chatbot</h3>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Run sales and support conversations through WhatsApp using AI-powered replies, automated flows, and product-wise API integration.
+              </p>
+              <ul className="space-y-2 text-sm text-foreground">
+                <li>Smart auto-replies for customer chats</li>
+                <li>Order, delivery, and status updates</li>
+                <li>Direct conversion from chat to sale</li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-10">
+            {chatbotSolutions.map((item, i) => (
+              <div
+                key={i}
+                className="bg-background border border-primary/20 rounded-2xl p-7 hover:border-primary/45 transition-all duration-300 hover:shadow-lg hover:shadow-primary/15"
+              >
+                <h3 className="text-2xl font-bold text-foreground mb-3">{item.title}</h3>
+                <p className="text-muted-foreground mb-4 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-primary font-medium mb-6">{item.note}</p>
+
+                <a
+                  href={item.ctaHref}
+                  target={item.ctaHref.startsWith('http') ? '_blank' : undefined}
+                  rel={item.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-3 rounded-xl font-semibold transition-all duration-300"
+                >
+                  {item.ctaLabel}
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-background border border-primary/15 rounded-2xl p-7">
+            <h3 className="text-2xl font-bold text-foreground mb-5">Product-Wise API Integrations We Build</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {[
+                'Product catalog API',
+                'Product pricing & discount API',
+                'Stock and availability API',
+                'Order placement & tracking API',
+                'Payment and invoice API',
+                'CRM + lead management API',
+              ].map((apiName, i) => (
+                <div key={i} className="flex items-start gap-3 p-4 bg-primary/5 rounded-xl border border-primary/10">
+                  <div className="w-6 h-6 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <svg className="w-3 h-3 text-primary-foreground" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-sm font-medium text-foreground">{apiName}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-6 mt-6">
+            <div className="bg-background border border-primary/15 rounded-2xl p-7">
+              <h3 className="text-2xl font-bold text-foreground mb-5">Advanced Chatbot Capabilities</h3>
+              <div className="space-y-3">
+                {[
+                  'Natural language conversations with context memory',
+                  'Multilingual responses for Sri Lankan and global audiences',
+                  'Smart product recommendations based on customer intent',
+                  'Lead qualification and automatic follow-up sequences',
+                  'Integration with CRM, ERP, POS, and payment systems',
+                  'Admin dashboard for chat history and performance insights',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-3">
+                    <div className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <svg className="w-3 h-3 text-primary-foreground" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <p className="text-sm text-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-background border border-primary/15 rounded-2xl p-7">
+              <h3 className="text-2xl font-bold text-foreground mb-5">Best For These Business Use Cases</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
+                {[
+                  'E-commerce customer support',
+                  'Order tracking and updates',
+                  'Service booking and appointment handling',
+                  'Education inquiry automation',
+                  'Real-estate lead engagement',
+                  'After-sales support and retention',
+                ].map((item, i) => (
+                  <div key={i} className="p-3 rounded-xl bg-primary/5 border border-primary/10 text-sm font-medium text-foreground">
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 bg-background border border-primary/15 rounded-2xl p-7">
+            <h3 className="text-2xl font-bold text-foreground mb-5">How We Deliver Your Chatbot Project</h3>
+            <div className="grid md:grid-cols-4 gap-4">
+              {[
+                { step: '01', title: 'Discovery', text: 'Understand your products, customers, and support/sales goals.' },
+                { step: '02', title: 'Build', text: 'Design chatbot flows and connect required product-wise APIs.' },
+                { step: '03', title: 'Launch', text: 'Deploy on website and WhatsApp with testing and quality checks.' },
+                { step: '04', title: 'Optimize', text: 'Track chat performance and improve conversion continuously.' },
+              ].map((phase, i) => (
+                <div key={i} className="p-4 rounded-xl bg-primary/5 border border-primary/10">
+                  <p className="text-xs font-bold text-primary mb-2">STEP {phase.step}</p>
+                  <h4 className="font-bold text-foreground mb-1">{phase.title}</h4>
+                  <p className="text-sm text-muted-foreground">{phase.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-2xl p-7 bg-gradient-to-r from-primary/10 via-primary/5 to-background border border-primary/20">
+            <h3 className="text-2xl font-bold text-foreground mb-3">Deployment, Training, and Ongoing Support</h3>
+            <p className="text-muted-foreground leading-relaxed max-w-4xl">
+              We provide full setup, team training, and continuous improvements after go-live. Your chatbot can be updated with new products, new campaign offers, and new API endpoints any time as your business grows.
+            </p>
           </div>
         </div>
       </section>

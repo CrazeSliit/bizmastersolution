@@ -23,7 +23,7 @@ To empower businesses at every stage by providing integrated, next-level strateg
 3. Direct Product Sales — Standardized AI products, software solutions, and business tools
 
 ## Services & Expertise Pillars
-1. AI & Tech Hub (BIZtech Hub) — Next-gen automation & AI solutions, advanced AI integration
+1. AI & Tech Hub (BIZtech Hub) — Next-gen automation & AI solutions, advanced AI integration, website chatbots, WhatsApp chatbots, and product-wise API integrations
 2. Sales & Growth (BIZ Strategic Growth Center) — Revenue acceleration strategies, sales & marketing
 3. Branding & Digital (BIZ Creative Forge) — Market presence, identity, digital branding
 4. Finance & Legal — Strategic financial advisory, legal structuring
@@ -57,8 +57,8 @@ function getFallbackResponse(userMessage: string): string {
     return "Our Vision: To transform businesses into industry leaders known for delivering unparalleled quality. We create a vibrant ecosystem where innovation and sustained profitability lead to financial freedom for all stakeholders.";
   if (msg.match(/mission/))
     return "Our Mission: To empower businesses at every stage with integrated, next-level strategic solutions, comprehensive management, and a supportive community — ensuring continuous growth.";
-  if (msg.match(/service|offer|provide|solution|what can/))
-    return "BIZmaster Solutions offers 5 core expertise pillars:\n\n1. 🤖 AI & Tech Hub\n2. 📈 Sales & Growth\n3. 🎨 Branding & Digital\n4. 💰 Finance & Legal\n5. 🤝 Investor Hub\n\nPlus BIZ Academy Forum, BIZ Advisor & Business Model Development. Visit our Services page to learn more!";
+  if (msg.match(/service|offer|provide|solution|what can|chatbot|whatsapp|api/))
+    return "BIZmaster Solutions offers 5 core expertise pillars:\n\n1. 🤖 AI & Tech Hub (including Website Chatbots, WhatsApp Chatbots, and product-wise API integrations)\n2. 📈 Sales & Growth\n3. 🎨 Branding & Digital\n4. 💰 Finance & Legal\n5. 🤝 Investor Hub\n\nPlus BIZ Academy Forum, BIZ Advisor & Business Model Development. Visit our Services page to learn more!";
   if (msg.match(/contact|reach|email|get in touch|talk/))
     return "Visit our Contact page to reach BIZmaster Solutions. We offer free consultations, strategic planning sessions, and comprehensive business partnerships. Our team will get back to you promptly!";
   if (msg.match(/price|cost|pricing|fee/))
