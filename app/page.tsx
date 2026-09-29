@@ -1,12 +1,11 @@
-
 import HeroSection from '@/components/home/herosection'
-import Navigation from '@/components/Navigation'
+import ProductsShowcase from '@/components/home/ProductsShowcase'
 
 export default function Home() {
   return (
     <div>
-      <Navigation />
       <HeroSection />
+      <ProductsShowcase />
     </div>
   );
 }

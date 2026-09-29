@@ -7,7 +7,7 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const solutions = [
   {
-    name: 'BIZtech Hub',
+    name: 'BIZ Tech Hub',
     subtitle: 'IT & Technology Solutions',
     href: '/biztech-hub',
   },
@@ -42,6 +42,7 @@ const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
+  { name: 'AI Agent', href: '/ai-agent' },
   { name: 'Business Model', href: '/business-model' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -64,12 +65,36 @@ export default function Navigation() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // On the home page the bar is transparent while it sits over the dark hero
+  const [isOverHero, setIsOverHero] = useState(pathname === '/');
+  useEffect(() => {
+    if (pathname !== '/') {
+      setIsOverHero(false);
+      return;
+    }
+    const onScroll = () => setIsOverHero(window.scrollY < window.innerHeight - 80);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [pathname]);
+  const isTransparent = isOverHero && !isMobileMenuOpen;
+
   const isActive = (href: string) => pathname === href;
 
   return (
-    <nav className="w-full z-50 fixed top-0 left-0" style={{ backgroundColor: '#5D0E8B' }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+    <nav
+      className={`w-full z-50 fixed top-0 left-0 transition-[background-color,box-shadow] duration-300 ${isTransparent ? '[text-shadow:0_1px_8px_rgba(0,0,0,0.6)]' : 'shadow-lg'}`}
+      style={{
+        backgroundColor: isTransparent ? 'transparent' : '#5D0E8B',
+        backgroundImage: isTransparent ? 'linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0))' : 'none',
+      }}
+    >
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className={`flex items-center justify-between transition-[height] duration-300 ${isTransparent ? 'h-24 lg:h-28' : 'h-20'}`}>
 
           {/* Logo */}
           <Link href="/" className="flex items-center flex-shrink-0">
@@ -83,7 +108,7 @@ export default function Navigation() {
                 key={link.href}
                 href={link.href}
                 className="relative px-4 py-4 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 group"
-                style={{ color: isActive(link.href) ? '#fff' : 'rgba(255,255,255,0.80)' }}
+                style={{ color: isActive(link.href) || isTransparent ? '#fff' : 'rgba(255,255,255,0.80)' }}
               >
                 {link.name}
                 {/* underline */}

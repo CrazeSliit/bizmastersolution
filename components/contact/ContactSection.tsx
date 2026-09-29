@@ -376,8 +376,8 @@ export default function ContactSection() {
                 ),
                 title: "Phone Consultation",
                 subtitle: "Direct Line to Experts",
-                contact: "+1 (555) 123-4567",
-                availability: "Mon-Fri, 9 AM - 6 PM EST",
+                contact: "0114221605",
+                availability: "Mon - Fri: 9:00 AM - 6:00 PM, Sat: 10:00 AM - 2:00 PM",
                 response: "Immediate",
                 best: "Urgent matters & complex discussions"
               },
@@ -389,9 +389,9 @@ export default function ContactSection() {
                 ),
                 title: "Email Support",
                 subtitle: "Comprehensive Documentation",
-                contact: "info@bizmastersolutions.com",
+                contact: "info@bizmastersolutions.lk",
                 availability: "24/7 Monitoring",
-                response: "Within 4 hours",
+                response: "Within 24 hours",
                 best: "Detailed inquiries & project briefs"
               },
               {
@@ -429,7 +429,7 @@ export default function ContactSection() {
                 ),
                 title: "Office Visit",
                 subtitle: "In-Person Collaboration",
-                contact: "123 Business District, Tech City",
+                contact: "9th Floor, ICC Techno Hub, Chandrika Kumarathunga Mawatha, Malabe",
                 availability: "By Appointment Only",
                 response: "Within 48 hours",
                 best: "Comprehensive strategy development"
@@ -442,7 +442,7 @@ export default function ContactSection() {
                 ),
                 title: "Emergency Support",
                 subtitle: "Critical Business Issues",
-                contact: "+1 (555) 999-HELP",
+                contact: "0114221605",
                 availability: "24/7 Priority Line",
                 response: "Within 30 minutes",
                 best: "System failures & urgent problems"

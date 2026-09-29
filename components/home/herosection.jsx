@@ -5,18 +5,52 @@ import Link from 'next/link'
 
 export default function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [scrollY, setScrollY] = useState(0)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     setIsVisible(true)
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-hero-gradient-from via-hero-gradient-via to-hero-gradient-to overflow-hidden">
+    <div
+      className="relative -mt-14 min-h-screen bg-gradient-to-br from-hero-gradient-from via-hero-gradient-via to-hero-gradient-to overflow-hidden"
+      // Hero always stays dark, whatever the site theme
+      style={{
+        '--hero-gradient-from': '#000000',
+        '--hero-gradient-via': '#050208',
+        '--hero-gradient-to': '#0d0614',
+        '--hero-text': '#ffffff',
+        '--hero-subtext': '#cccccc',
+        colorScheme: 'dark',
+      }}
+    >
+      {/* Flower Animation - full hero background */}
+      <div className="absolute inset-x-0 top-0 h-[110vh] lg:h-[125vh] min-h-[820px] pointer-events-none" aria-hidden="true">
+        {/* Brand glow behind the flower */}
+        <div className="absolute top-[15%] right-[5%] w-[45%] h-[60%] rounded-full bg-hero-accent/30 blur-3xl animate-pulse"></div>
+        {/* Black video background melts into the dark hero; bottom edge fades out */}
+        <div
+          className="absolute inset-0"
+          style={{
+            mixBlendMode: 'screen',
+            maskImage: 'linear-gradient(to bottom, #000 70%, transparent 100%)',
+            WebkitMaskImage: 'linear-gradient(to bottom, #000 70%, transparent 100%)',
+          }}
+        >
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover lg:translate-x-[22%] lg:[mask-image:linear-gradient(to_right,transparent,#000_30%)]"
+          >
+            <source src="https://api.getlayers.ai/storage/v1/object/public/public/assets/loopstack-f8c64439bf/flower.mp4" type="video/mp4" />
+          </video>
+        </div>
+        {/* Keeps the text readable: darkens the left side on desktop, the whole area on mobile */}
+        <div className="absolute inset-0 bg-black/60 lg:bg-transparent lg:bg-gradient-to-r lg:from-black/85 lg:via-black/40 lg:to-transparent"></div>
+      </div>
+
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-20">
         {/* Floating Geometric Shapes */}
@@ -37,20 +71,18 @@ export default function HeroSection() {
       
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-24 lg:pt-32 pb-12 lg:pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-40 lg:pt-52 pb-[calc(8.5vw+5rem)]">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column - Content */}
-          <div className={`space-y-8 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
+          <div className={`space-y-8 lg:-ml-12 xl:-ml-20 ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
         
             
             {/* Main Headline */}
-            <h1 className="text-5xl lg:text-7xl font-extrabold text-hero-text leading-tight tracking-tight">
-                <span className="block" style={{color: '#5D0E8B'}}>Transforming</span>
-                <span className="block" style={{color: '#5D0E8B'}}>
-                    Businesses
-                </span>
-                <span className="block" style={{color: '#5D0E8B'}}>into Industry</span>
-                <span className="block text-hero-accent drop-shadow-lg">Leaders</span>
+            <h1 className="text-4xl lg:text-6xl font-extrabold text-hero-text leading-tight tracking-tight [text-shadow:0_2px_24px_rgba(0,0,0,0.6)]">
+                <span className="block text-white">AI-Powered</span>
+                <span className="block text-white">Business Growth</span>
+                <span className="block text-white">&amp; Automation</span>
+                <span className="block text-white drop-shadow-lg">Partner</span>
             </h1>
 
             {/* Subheadline */}
@@ -69,7 +101,7 @@ export default function HeroSection() {
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                             </svg>
                           </Link>
-                          <button className="group backdrop-blur-sm bg-white/90 hover:bg-#580088 border border-hero-accent text-purple px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center justify-center">
+                          <button className="group backdrop-blur-sm bg-white/90 hover:bg-#580088 border border-hero-accent text-[#5D0E8B] px-6 py-3 rounded-full font-semibold text-base transition-all duration-300 hover:scale-105 flex items-center justify-center">
                             Explore Our Services
                             <svg className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -78,24 +110,8 @@ export default function HeroSection() {
                         </div>
                       </div>
                       
-                    {/* Right Column - Visual Content */}
-                                        <div className="relative -mt-8 lg:-mt-12">
-                                        
-                                            <div className="relative z-10 group">
-                                                <div className="relative overflow-hidden rounded-xl shadow-2xl">
-                                                    <img 
-                                                        src="/Untitled design (5).png"
-                                                        alt="Business team working together"
-                                                        className="w-[1000px] h-[750px] object-cover group-hover:scale-105 transition-transform duration-700"
-                                                        style={{transform: `translateY(${scrollY * 0.05}px)`}}
-                                                    />
-                                                    {/* Overlay gradient */}
-                                                </div>
-                                            </div>
-                                            
-                                            {/* Background Glow Effect */}
-                                            <div className="absolute inset-0 bg-hero-accent/20 rounded-3xl blur-3xl scale-110 -z-10 animate-pulse"></div>
-                                        </div>
+                    {/* Right Column - flower shows here from the background */}
+                                        <div className="hidden lg:block h-[560px]" aria-hidden="true"></div>
                                         </div>
 
                                         {/* Key Value Pillars */}
