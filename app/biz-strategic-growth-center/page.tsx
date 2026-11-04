@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Navigation from '@/components/Navigation'
 import Link from 'next/link'
 
 const services = [
@@ -59,8 +58,6 @@ export default function BIZStrategicGrowthCenterPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-
       {/* Hero */}
       <section className="relative pt-32 pb-24 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-background pointer-events-none" />

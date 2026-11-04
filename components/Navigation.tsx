@@ -41,7 +41,7 @@ const solutions = [
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Services', href: '/services' },
+  { name: 'Agentic Solutions', href: 'https://agentbizny.com/', external: true },
   { name: 'Business Model', href: '/business-model' },
   { name: 'Contact', href: '/contact' },
 ];
@@ -82,6 +82,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
+                {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className="relative px-4 py-4 text-sm font-semibold uppercase tracking-wide transition-colors duration-200 group"
                 style={{ color: isActive(link.href) ? '#fff' : 'rgba(255,255,255,0.80)' }}
               >
@@ -207,6 +208,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
+              {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               onClick={() => setIsMobileMenuOpen(false)}
               className="block px-3 py-2.5 text-sm font-semibold uppercase tracking-wide text-white/80 hover:text-white hover:bg-white/10 rounded-sm transition-colors"
             >
