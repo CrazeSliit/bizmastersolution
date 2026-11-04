@@ -39,6 +39,7 @@ const chatbotSolutions = [
     title: 'AI Website Chatbot',
     description:
       'Deploy an AI assistant on your website to handle customer questions, capture leads, and guide visitors to the right products instantly.',
+    features: ['24/7 instant customer responses', 'Product suggestions by user intent', 'Lead collection and CRM handoff'],
     ctaLabel: 'Use Website Chatbot',
     ctaHref: '#website-chatbot',
     note: 'Live on your site 24/7 with multilingual support and product recommendations.',
@@ -47,6 +48,7 @@ const chatbotSolutions = [
     title: 'AI WhatsApp Chatbot',
     description:
       'Launch a WhatsApp AI chatbot for instant support, order updates, and sales conversations where your customers are most active.',
+    features: ['Smart auto-replies for customer chats', 'Order, delivery, and status updates', 'Direct conversion from chat to sale'],
     ctaLabel: 'Open WhatsApp Chatbot',
     ctaHref: 'https://wa.me/+94781760086?text=Hi%20BIZmaster%2C%20I%20need%20an%20AI%20WhatsApp%20chatbot%20with%20product-wise%20API%20integration.',
     note: 'Great for auto-replies, smart follow-ups, and faster conversions.',
@@ -218,46 +220,32 @@ export default function BIZtechHubPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 mb-10">
-            <div className="bg-background border border-primary/20 rounded-2xl p-7">
-              <h3 className="text-2xl font-bold text-foreground mb-4">AI Website Chatbot</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Add an intelligent chatbot directly to your website to handle visitor questions, product guidance, lead capture, and customer support in real time.
-              </p>
-              <ul className="space-y-2 text-sm text-foreground">
-                <li>24/7 instant customer responses</li>
-                <li>Product suggestions by user intent</li>
-                <li>Lead collection and CRM handoff</li>
-              </ul>
-            </div>
-
-            <div className="bg-background border border-primary/20 rounded-2xl p-7">
-              <h3 className="text-2xl font-bold text-foreground mb-4">AI WhatsApp Chatbot</h3>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Run sales and support conversations through WhatsApp using AI-powered replies, automated flows, and product-wise API integration.
-              </p>
-              <ul className="space-y-2 text-sm text-foreground">
-                <li>Smart auto-replies for customer chats</li>
-                <li>Order, delivery, and status updates</li>
-                <li>Direct conversion from chat to sale</li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6 mb-10">
             {chatbotSolutions.map((item, i) => (
               <div
                 key={i}
-                className="bg-background border border-primary/20 rounded-2xl p-7 hover:border-primary/45 transition-all duration-300 hover:shadow-lg hover:shadow-primary/15"
+                className="flex flex-col bg-background border border-primary/20 rounded-2xl p-7 hover:border-primary/45 transition-all duration-300 hover:shadow-lg hover:shadow-primary/15"
               >
                 <h3 className="text-2xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed">{item.description}</p>
-                <p className="text-sm text-primary font-medium mb-6">{item.note}</p>
+                <p className="text-muted-foreground mb-5 leading-relaxed">{item.description}</p>
+                <ul className="space-y-2.5 mb-5">
+                  {item.features.map((feature, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm text-foreground">
+                      <span className="w-5 h-5 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <svg className="w-3 h-3 text-primary-foreground" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-sm text-primary font-medium mb-6 mt-auto">{item.note}</p>
 
                 <a
                   href={item.ctaHref}
                   target={item.ctaHref.startsWith('http') ? '_blank' : undefined}
                   rel={item.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-3 rounded-xl font-semibold transition-all duration-300"
+                  className="self-start inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-5 py-3 rounded-xl font-semibold transition-all duration-300"
                 >
                   {item.ctaLabel}
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
