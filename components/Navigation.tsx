@@ -41,12 +41,8 @@ const solutions = [
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-<<<<<<< HEAD
   { name: 'Agentic Solutions', href: 'https://agentbizny.com/', external: true },
-=======
-  { name: 'Services', href: '/services' },
   { name: 'AI Agent', href: '/ai-agent' },
->>>>>>> 3bd010584a6167a63da2f480902985228803e017
   { name: 'Business Model', href: '/business-model' },
   { name: 'Contact', href: '/contact' },
 ];
